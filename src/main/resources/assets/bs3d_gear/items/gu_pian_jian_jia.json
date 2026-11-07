@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bs3d_gear:item/gu_pian_jian_jia",
+    "model": {
+      "type": "bs3d_gear:wearable"
+    }
+  }
+}

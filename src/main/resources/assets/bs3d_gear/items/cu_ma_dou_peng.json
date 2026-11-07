@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bs3d_gear:item/cu_ma_dou_peng",
+    "model": {
+      "type": "bs3d_gear:wearable"
+    }
+  }
+}

@@ -1,0 +1,402 @@
+{
+  "repository": "Kizunad/Bong",
+  "commit": "c01576513e451490bd73df12513227bb8637222b",
+  "models": [
+    {
+      "id": "can_bu_tou_jin",
+      "path": "modelScript/gear/can_bu_tou_jin/CanBuTouJin_tex.bbmodel",
+      "blob_sha1": "5594039d03d519f20959480edcf36bf2b788582b",
+      "mirror_x": true,
+      "cubes": 206,
+      "bindings": [
+        {
+          "segment": "head_mount",
+          "layer": "head",
+          "bone": "head"
+        }
+      ]
+    },
+    {
+      "id": "cu_bu_bang_tui",
+      "path": "modelScript/gear/cu_bu_bang_tui/CuBuBangTui_tex.bbmodel",
+      "blob_sha1": "682dcc5b4a2645ef699e64eb0272c3e9f9e4a19d",
+      "mirror_x": true,
+      "cubes": 206,
+      "bindings": [
+        {
+          "segment": "leg_r_mount",
+          "layer": "right_leg",
+          "bone": "r_shin"
+        },
+        {
+          "segment": "leg_l_mount",
+          "layer": "left_leg",
+          "bone": "l_shin"
+        }
+      ]
+    },
+    {
+      "id": "cu_bu_mian_jin",
+      "path": "modelScript/gear/cu_bu_mian_jin/CuBuMianJin_tex.bbmodel",
+      "blob_sha1": "e9af01961946c7b831d402b6919bcc3182f2bb37",
+      "mirror_x": true,
+      "cubes": 206,
+      "bindings": [
+        {
+          "segment": "head_mount",
+          "layer": "face",
+          "bone": "head"
+        },
+        {
+          "segment": "neck_wrap",
+          "layer": "face",
+          "bone": "chest"
+        },
+        {
+          "segment": "bib_chest",
+          "layer": "face",
+          "bone": "chest"
+        }
+      ]
+    },
+    {
+      "id": "cu_ma_dou_peng",
+      "path": "modelScript/gear/cu_ma_dou_peng/CuMaDouPeng_tex.bbmodel",
+      "blob_sha1": "dd9b9f6732da9e238cecbe8421fdd9b57aff165a",
+      "mirror_x": true,
+      "cubes": 240,
+      "bindings": [
+        {
+          "segment": "hood",
+          "layer": "cape",
+          "bone": "head"
+        },
+        {
+          "segment": "collar",
+          "layer": "cape",
+          "bone": "chest"
+        },
+        {
+          "segment": "mantle_r",
+          "layer": "cape",
+          "bone": "r_upper_arm"
+        },
+        {
+          "segment": "mantle_l",
+          "layer": "cape",
+          "bone": "l_upper_arm"
+        },
+        {
+          "segment": "drape_r",
+          "layer": "cape",
+          "bone": "r_upper_arm"
+        },
+        {
+          "segment": "drape_l",
+          "layer": "cape",
+          "bone": "l_upper_arm"
+        },
+        {
+          "segment": "cape_back",
+          "layer": "cape",
+          "bone": "chest"
+        },
+        {
+          "segment": "cape_front_r",
+          "layer": "cape",
+          "bone": "chest"
+        },
+        {
+          "segment": "cape_front_l",
+          "layer": "cape",
+          "bone": "chest"
+        },
+        {
+          "segment": "neck_tie",
+          "layer": "cape",
+          "bone": "chest"
+        }
+      ]
+    },
+    {
+      "id": "gu_pian_jian_jia",
+      "path": "modelScript/gear/gu_pian_jian_jia/GuPianJianJia_tex.bbmodel",
+      "blob_sha1": "a8b9da7882a67e6ca8dfc8a0b7979be1e30ef611",
+      "mirror_x": true,
+      "cubes": 251,
+      "bindings": [
+        {
+          "segment": "chest_anchor",
+          "layer": "left_shoulder",
+          "bone": "chest"
+        },
+        {
+          "segment": "pauldron_pad",
+          "layer": "left_shoulder",
+          "bone": "l_upper_arm"
+        },
+        {
+          "segment": "plate_top",
+          "layer": "left_shoulder",
+          "bone": "l_upper_arm"
+        },
+        {
+          "segment": "plate_upper",
+          "layer": "left_shoulder",
+          "bone": "l_upper_arm"
+        },
+        {
+          "segment": "plate_mid",
+          "layer": "left_shoulder",
+          "bone": "l_upper_arm"
+        },
+        {
+          "segment": "plate_low",
+          "layer": "left_shoulder",
+          "bone": "l_upper_arm"
+        },
+        {
+          "segment": "lash_cords",
+          "layer": "left_shoulder",
+          "bone": "l_upper_arm"
+        },
+        {
+          "segment": "strap_front",
+          "layer": "left_shoulder",
+          "bone": "chest"
+        },
+        {
+          "segment": "strap_back",
+          "layer": "left_shoulder",
+          "bone": "chest"
+        },
+        {
+          "segment": "strap_buckle",
+          "layer": "left_shoulder",
+          "bone": "chest"
+        }
+      ]
+    },
+    {
+      "id": "ku_cao_guo_jiao",
+      "path": "modelScript/gear/ku_cao_guo_jiao/KuCaoGuoJiao_tex.bbmodel",
+      "blob_sha1": "43c092a231605c923059f9e82529535020449808",
+      "mirror_x": true,
+      "cubes": 205,
+      "bindings": [
+        {
+          "segment": "foot_r_mount",
+          "layer": "right_foot",
+          "bone": "r_foot"
+        },
+        {
+          "segment": "foot_l_mount",
+          "layer": "left_foot",
+          "bone": "l_foot"
+        }
+      ]
+    },
+    {
+      "id": "pi_sheng_hu_wan",
+      "path": "modelScript/gear/pi_sheng_hu_wan/PiShengHuWan_tex.bbmodel",
+      "blob_sha1": "883d7e724beed8a607dab0cb2616dfa77ef342af",
+      "mirror_x": true,
+      "cubes": 205,
+      "bindings": [
+        {
+          "segment": "arm_r_mount",
+          "layer": "right_wrist",
+          "bone": "r_forearm"
+        },
+        {
+          "segment": "arm_l_mount",
+          "layer": "left_wrist",
+          "bone": "l_forearm"
+        }
+      ]
+    },
+    {
+      "id": "shou_ya_xiang_lian",
+      "path": "modelScript/gear/shou_ya_xiang_lian/ShouYaXiangLian_tex.bbmodel",
+      "blob_sha1": "a3637fe605af6eef6350e1fd6c74cdf7ba73b84c",
+      "mirror_x": true,
+      "cubes": 119,
+      "bindings": [
+        {
+          "segment": "cord_main",
+          "layer": "neck",
+          "bone": "chest"
+        }
+      ]
+    },
+    {
+      "id": "xiu_pian_hu_mu",
+      "path": "modelScript/gear/xiu_pian_hu_mu/XiuPianHuMu_tex.bbmodel",
+      "blob_sha1": "35821c574d5430b47804c56ebad3c43d8418eedf",
+      "mirror_x": true,
+      "cubes": 149,
+      "bindings": [
+        {
+          "segment": "goggle_bridge",
+          "layer": "eyes",
+          "bone": "head"
+        },
+        {
+          "segment": "frame_r",
+          "layer": "eyes",
+          "bone": "head"
+        },
+        {
+          "segment": "frame_l",
+          "layer": "eyes",
+          "bone": "head"
+        },
+        {
+          "segment": "strap_sides",
+          "layer": "eyes",
+          "bone": "head"
+        },
+        {
+          "segment": "strap_back",
+          "layer": "eyes",
+          "bone": "head"
+        }
+      ]
+    },
+    {
+      "id": "war_helm",
+      "path": "modelScript/models/armor/warhelm/WarHelm.bbmodel",
+      "blob_sha1": "9387d3ddec4a005f37a3e1975343ce8bda382f93",
+      "mirror_x": false,
+      "cubes": 206,
+      "bindings": [
+        {
+          "segment": "armorHead",
+          "layer": "armor_head",
+          "bone": "head"
+        }
+      ]
+    },
+    {
+      "id": "war_chest",
+      "path": "modelScript/models/armor/warhelm/WarChest.bbmodel",
+      "blob_sha1": "c1bbb4591083c11c700c446379a42d411fcc2003",
+      "mirror_x": false,
+      "cubes": 71,
+      "bindings": [
+        {
+          "segment": "armorBody",
+          "layer": "armor_body",
+          "bone": "chest"
+        },
+        {
+          "segment": "armorLeftArm",
+          "layer": "armor_body",
+          "bone": "l_upper_arm"
+        },
+        {
+          "segment": "armorRightArm",
+          "layer": "armor_body",
+          "bone": "r_upper_arm"
+        }
+      ]
+    },
+    {
+      "id": "war_legs",
+      "path": "modelScript/models/armor/warhelm/WarLegs.bbmodel",
+      "blob_sha1": "a79216855975d4855ddd1edf85a674f3071e2f0d",
+      "mirror_x": false,
+      "cubes": 44,
+      "bindings": [
+        {
+          "segment": "armorLeftLeg",
+          "layer": "armor_legs",
+          "bone": "l_thigh"
+        },
+        {
+          "segment": "armorRightLeg",
+          "layer": "armor_legs",
+          "bone": "r_thigh"
+        },
+        {
+          "segment": "armorLeftBoot",
+          "layer": "armor_feet",
+          "bone": "l_foot"
+        },
+        {
+          "segment": "armorRightBoot",
+          "layer": "armor_feet",
+          "bone": "r_foot"
+        }
+      ]
+    },
+    {
+      "id": "war_cloak",
+      "path": "modelScript/models/armor/warhelm/WarCloak.bbmodel",
+      "blob_sha1": "e1fff92a6b4e8939b9f47dbfeacd6af7ccf59556",
+      "mirror_x": false,
+      "cubes": 22,
+      "bindings": [
+        {
+          "segment": "cloak",
+          "layer": "cape",
+          "bone": "chest"
+        }
+      ]
+    },
+    {
+      "id": "war_suit",
+      "path": "modelScript/models/armor/warhelm/WarSuit.bbmodel",
+      "blob_sha1": "6ba71262c855c99cd19d2a035becb434bbb5431e",
+      "mirror_x": false,
+      "cubes": 344,
+      "bindings": [
+        {
+          "segment": "armorHead",
+          "layer": "armor_head",
+          "bone": "head"
+        },
+        {
+          "segment": "armorBody",
+          "layer": "armor_body",
+          "bone": "chest"
+        },
+        {
+          "segment": "armorLeftArm",
+          "layer": "armor_body",
+          "bone": "l_upper_arm"
+        },
+        {
+          "segment": "armorRightArm",
+          "layer": "armor_body",
+          "bone": "r_upper_arm"
+        },
+        {
+          "segment": "armorLeftLeg",
+          "layer": "armor_legs",
+          "bone": "l_thigh"
+        },
+        {
+          "segment": "armorRightLeg",
+          "layer": "armor_legs",
+          "bone": "r_thigh"
+        },
+        {
+          "segment": "armorLeftBoot",
+          "layer": "armor_feet",
+          "bone": "l_foot"
+        },
+        {
+          "segment": "armorRightBoot",
+          "layer": "armor_feet",
+          "bone": "r_foot"
+        },
+        {
+          "segment": "cloak",
+          "layer": "cape",
+          "bone": "chest"
+        }
+      ]
+    }
+  ]
+}

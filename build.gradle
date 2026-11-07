@@ -1,0 +1,144 @@
+plugins {
+    alias(libs.plugins.fabric.loom)
+}
+
+group = 'dev.kizuna'
+version = '0.1.0-SNAPSHOT'
+
+repositories {
+    maven { url = 'https://maven.fabricmc.net/' }
+    maven { url = 'https://maven.wispforest.io/releases' }
+    maven { url = 'https://jitpack.io' }
+    mavenCentral()
+}
+
+dependencies {
+    minecraft libs.minecraft
+    implementation libs.fabric.loader
+    implementation libs.fabric.api
+    implementation libs.protobuf.java
+    implementation 'dev.kizuna.backpack3d:server'
+    implementation 'dev.kizuna.backpack3d:client'
+    implementation 'dev.kizuna.inventoryui:kizuna-inventory-ui-framework'
+    implementation 'dev.kizuna.inventoryui:server'
+    implementation libs.owo
+    implementation libs.tomlj
+    compileOnly 'dev.kizuna:kizuna-players-animation'
+    if (!providers.gradleProperty('gearWithoutPa').isPresent()) {
+        runtimeOnly 'dev.kizuna:kizuna-players-animation'
+    }
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly libs.junit.launcher
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(libs.versions.java.get())
+    withSourcesJar()
+}
+tasks.withType(JavaCompile).configureEach {
+    options.release = libs.versions.java.get().toInteger()
+    options.encoding = 'UTF-8'
+}
+tasks.withType(JavaExec).configureEach {
+    javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(libs.versions.java.get()) }
+}
+test { useJUnitPlatform() }
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand version: project.version }
+}
+jar { from('LICENSE') }
+
+sourceSets.create('clientTest') {
+    compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+    runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+}
+sourceSets.create('gametest') {
+    compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+    runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+}
+dependencies {
+    clientTestImplementation libs.junit.jupiter
+    clientTestImplementation libs.junit.launcher
+    // 原版页面接线仅在客户端验收装入，生产 Gear 不依赖 Vanilla Addon。
+    clientTestImplementation('dev.kizuna.bs3d.vanilla:client') { transitive = false }
+    if (providers.gradleProperty('gearWithPocket').isPresent()) {
+        clientTestRuntimeOnly('dev.kizuna.bs3d.pocket:client') { transitive = false }
+    }
+    // 实际穿搭计重只在服务端验收装入，Gear 生产包不硬依赖 Weights。
+    gametestImplementation('dev.kizuna.bs3d.weights:server') { transitive = false }
+    gametestRuntimeOnly libs.antlr.runtime
+}
+
+loom {
+    mods {
+        bs3d_gear { sourceSet sourceSets.main }
+        bs3d_gear_client_test { sourceSet sourceSets.clientTest }
+        bs3d_gear_gametest { sourceSet sourceSets.gametest }
+    }
+    runs {
+        clientTest {
+            client()
+            source sourceSets.clientTest
+            runDir "build/clienttest/${project.findProperty('gearTestRun') ?: 'manual'}"
+            programArgs '--username', 'GearTest', '--width', '1280', '--height', '960'
+            programArgs '--quickPlaySingleplayer', 'gear-test'
+            vmArg "-Dgear.test.pa=${!providers.gradleProperty('gearWithoutPa').isPresent()}"
+            vmArg "-Dgear.test.equipment=${providers.gradleProperty('gearModelEquipmentTest').isPresent()}"
+            vmArg "-Dgear.test.pocket=${providers.gradleProperty('gearWithPocket').isPresent()}"
+        }
+        gametest {
+            server()
+            source sourceSets.gametest
+            runDir "build/gametest/${project.findProperty('gearTestRun') ?: 'manual'}"
+            vmArg '-Dfabric-api.gametest'
+            vmArg '-Dfabric-api.gametest.report-file=results/gametest.xml'
+        }
+    }
+}
+
+tasks.register('checkImport', Exec) {
+    commandLine 'python3', 'scripts/import_bong_wear.py', '--check'
+}
+tasks.register('testImport', Exec) {
+    commandLine 'python3', '-m', 'unittest', 'discover', '-s', 'scripts/tests'
+}
+tasks.named('check') { dependsOn 'checkImport', 'testImport' }
+tasks.named('runGametest') {
+    doFirst {
+        def acceptedEula = providers.gradleProperty('gearTestEula')
+        if (!acceptedEula.isPresent()) {
+            throw new GradleException('请用 -PgearTestEula 指向本机已接受的测试服务器 eula.txt')
+        }
+        def source = file(acceptedEula.get())
+        if (!source.isFile() || !source.readLines().contains('eula=true')) {
+            throw new GradleException('gearTestEula 必须是已有的 eula=true 文件')
+        }
+        def run = project.findProperty('gearTestRun') ?: 'manual'
+        def directory = file("build/gametest/${run}")
+        directory.mkdirs()
+        new File(directory, 'eula.txt').bytes = source.bytes
+    }
+}
+tasks.register('prepareClientTestWorld', Copy) {
+    dependsOn tasks.named('runGametest')
+    def run = project.findProperty('gearTestRun') ?: 'manual'
+    from "build/gametest/${run}/world"
+    into "build/clienttest/${run}/saves/gear-test"
+    exclude 'session.lock'
+}
+tasks.named('runClientTest') {
+    dependsOn tasks.named('prepareClientTestWorld')
+    doFirst {
+        def directory = file("build/clienttest/${project.findProperty('gearTestRun') ?: 'manual'}")
+        directory.mkdirs()
+        new File(directory, 'options.txt').text = 'onboardAccessibility:false\nguiScale:2\nlang:zh_cn\n'
+        new File(directory, 'result.txt').text = 'success=false\n'
+    }
+    doLast {
+        def report = file("build/clienttest/${project.findProperty('gearTestRun') ?: 'manual'}/result.txt")
+        if (!report.text.startsWith('success=true\n')) {
+            throw new GradleException("穿搭客户端验证未通过：${report}")
+        }
+    }
+}

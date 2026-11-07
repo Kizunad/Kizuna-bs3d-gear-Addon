@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bs3d_gear:item/xiu_pian_hu_mu",
+    "model": {
+      "type": "bs3d_gear:wearable"
+    }
+  }
+}

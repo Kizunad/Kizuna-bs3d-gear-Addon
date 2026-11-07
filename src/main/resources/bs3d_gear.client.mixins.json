@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "dev.kizuna.bs3dgear.client.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["ContainerBindingMixin"],
+  "injectors": {"defaultRequire": 1}
+}

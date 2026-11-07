@@ -1,0 +1,196 @@
+# 固定版本 Bong 穿搭；几何为骨枢轴局部像素，所有装备当前只提供外观。
+version: 1
+items {
+  id: "bs3d_gear:can_bu_tou_jin"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "残布头巾"
+    model: "bs3d_gear:can_bu_tou_jin"
+    slots { layer: "head" bone: "head" segment: "head_mount" }
+    asset { file: "models/CanBuTouJin.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:cu_bu_bang_tui"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "粗布绑腿"
+    model: "bs3d_gear:cu_bu_bang_tui"
+    slots { layer: "right_leg" bone: "r_shin" segment: "leg_r_mount" }
+    slots { layer: "left_leg" bone: "l_shin" segment: "leg_l_mount" }
+    asset { file: "models/CuBuBangTui.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:cu_bu_mian_jin"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "粗布面巾"
+    model: "bs3d_gear:cu_bu_mian_jin"
+    slots { layer: "face" bone: "head" segment: "head_mount" }
+    slots { layer: "face" bone: "chest" segment: "neck_wrap" }
+    slots { layer: "face" bone: "chest" segment: "bib_chest" }
+    asset { file: "models/CuBuMianJin.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:cu_ma_dou_peng"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "粗麻斗篷"
+    model: "bs3d_gear:cu_ma_dou_peng"
+    slots { layer: "cape" bone: "head" segment: "hood" }
+    slots { layer: "cape" bone: "chest" segment: "collar" }
+    slots { layer: "cape" bone: "r_upper_arm" segment: "mantle_r" }
+    slots { layer: "cape" bone: "l_upper_arm" segment: "mantle_l" }
+    slots { layer: "cape" bone: "r_upper_arm" segment: "drape_r" }
+    slots { layer: "cape" bone: "l_upper_arm" segment: "drape_l" }
+    slots { layer: "cape" bone: "chest" segment: "cape_back" }
+    slots { layer: "cape" bone: "chest" segment: "cape_front_r" }
+    slots { layer: "cape" bone: "chest" segment: "cape_front_l" }
+    slots { layer: "cape" bone: "chest" segment: "neck_tie" }
+    asset { file: "models/CuMaDouPeng.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:gu_pian_jian_jia"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "骨片肩甲"
+    model: "bs3d_gear:gu_pian_jian_jia"
+    slots { layer: "left_shoulder" bone: "chest" segment: "chest_anchor" }
+    slots { layer: "left_shoulder" bone: "l_upper_arm" segment: "pauldron_pad" }
+    slots { layer: "left_shoulder" bone: "l_upper_arm" segment: "plate_top" }
+    slots { layer: "left_shoulder" bone: "l_upper_arm" segment: "plate_upper" }
+    slots { layer: "left_shoulder" bone: "l_upper_arm" segment: "plate_mid" }
+    slots { layer: "left_shoulder" bone: "l_upper_arm" segment: "plate_low" }
+    slots { layer: "left_shoulder" bone: "l_upper_arm" segment: "lash_cords" }
+    slots { layer: "left_shoulder" bone: "chest" segment: "strap_front" }
+    slots { layer: "left_shoulder" bone: "chest" segment: "strap_back" }
+    slots { layer: "left_shoulder" bone: "chest" segment: "strap_buckle" }
+    asset { file: "models/GuPianJianJia.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:ku_cao_guo_jiao"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "枯草裹脚"
+    model: "bs3d_gear:ku_cao_guo_jiao"
+    slots { layer: "right_foot" bone: "r_foot" segment: "foot_r_mount" }
+    slots { layer: "left_foot" bone: "l_foot" segment: "foot_l_mount" }
+    asset { file: "models/KuCaoGuoJiao.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:pi_sheng_hu_wan"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "皮绳护腕"
+    model: "bs3d_gear:pi_sheng_hu_wan"
+    slots { layer: "right_wrist" bone: "r_forearm" segment: "arm_r_mount" }
+    slots { layer: "left_wrist" bone: "l_forearm" segment: "arm_l_mount" }
+    asset { file: "models/PiShengHuWan.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:shou_ya_xiang_lian"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "兽牙项链"
+    model: "bs3d_gear:shou_ya_xiang_lian"
+    slots { layer: "neck" bone: "chest" segment: "cord_main" }
+    asset { file: "models/ShouYaXiangLian.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:xiu_pian_hu_mu"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "锈片护目"
+    model: "bs3d_gear:xiu_pian_hu_mu"
+    slots { layer: "eyes" bone: "head" segment: "goggle_bridge" }
+    slots { layer: "eyes" bone: "head" segment: "frame_r" }
+    slots { layer: "eyes" bone: "head" segment: "frame_l" }
+    slots { layer: "eyes" bone: "head" segment: "strap_sides" }
+    slots { layer: "eyes" bone: "head" segment: "strap_back" }
+    asset { file: "models/XiuPianHuMu.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:war_helm"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "战盔"
+    model: "bs3d_gear:war_helm"
+    slots { layer: "armor_head" bone: "head" segment: "armorHead" }
+    asset { file: "models/WarHelm.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:war_chest"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "战甲"
+    model: "bs3d_gear:war_chest"
+    slots { layer: "armor_body" bone: "chest" segment: "armorBody" }
+    slots { layer: "armor_body" bone: "l_upper_arm" segment: "armorLeftArm" }
+    slots { layer: "armor_body" bone: "r_upper_arm" segment: "armorRightArm" }
+    asset { file: "models/WarChest.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:war_legs"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "战裙与战靴"
+    model: "bs3d_gear:war_legs"
+    slots { layer: "armor_legs" bone: "l_thigh" segment: "armorLeftLeg" }
+    slots { layer: "armor_legs" bone: "r_thigh" segment: "armorRightLeg" }
+    slots { layer: "armor_feet" bone: "l_foot" segment: "armorLeftBoot" }
+    slots { layer: "armor_feet" bone: "r_foot" segment: "armorRightBoot" }
+    asset { file: "models/WarLegs.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:war_cloak"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "战披风"
+    model: "bs3d_gear:war_cloak"
+    slots { layer: "cape" bone: "chest" segment: "cloak" }
+    asset { file: "models/WarCloak.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}
+items {
+  id: "bs3d_gear:war_suit"
+  creative_tab: "bs3d_gear:equipment"
+  wearable {
+    title: "战装套装"
+    model: "bs3d_gear:war_suit"
+    slots { layer: "armor_head" bone: "head" segment: "armorHead" }
+    slots { layer: "armor_body" bone: "chest" segment: "armorBody" }
+    slots { layer: "armor_body" bone: "l_upper_arm" segment: "armorLeftArm" }
+    slots { layer: "armor_body" bone: "r_upper_arm" segment: "armorRightArm" }
+    slots { layer: "armor_legs" bone: "l_thigh" segment: "armorLeftLeg" }
+    slots { layer: "armor_legs" bone: "r_thigh" segment: "armorRightLeg" }
+    slots { layer: "armor_feet" bone: "l_foot" segment: "armorLeftBoot" }
+    slots { layer: "armor_feet" bone: "r_foot" segment: "armorRightBoot" }
+    slots { layer: "cape" bone: "chest" segment: "cloak" }
+    asset { file: "models/WarSuit.bbmodel" mode: MODEL_RENDER_MODE_RAW_SEGMENTS
+      open_animation: "" close_animation: "" }
+  }
+}

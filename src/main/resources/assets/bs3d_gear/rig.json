@@ -1,0 +1,20 @@
+{
+  "pixels_per_block": 16,
+  "origin_height_pixels": 24,
+  "bones": {
+    "head": {"pivot": [0, 24, 0], "part": "head", "part_pivot": [0, 24, 0]},
+    "chest": {"pivot": [0, 20, 0], "part": "body", "part_pivot": [0, 24, 0]},
+    "waist": {"pivot": [0, 16, 0], "part": "body", "part_pivot": [0, 24, 0]},
+    "pelvis": {"pivot": [0, 12, 0], "part": "body", "part_pivot": [0, 24, 0]},
+    "r_upper_arm": {"pivot": [-5, 22, 0], "part": "right_arm", "part_pivot": [-5, 22, 0]},
+    "l_upper_arm": {"pivot": [5, 22, 0], "part": "left_arm", "part_pivot": [5, 22, 0]},
+    "r_forearm": {"pivot": [-6, 19, 0], "part": "right_arm", "part_pivot": [-5, 22, 0]},
+    "l_forearm": {"pivot": [6, 19, 0], "part": "left_arm", "part_pivot": [5, 22, 0]},
+    "r_thigh": {"pivot": [-1.9, 12, 0], "part": "right_leg", "part_pivot": [-1.9, 12, 0]},
+    "l_thigh": {"pivot": [1.9, 12, 0], "part": "left_leg", "part_pivot": [1.9, 12, 0]},
+    "r_shin": {"pivot": [-1.9, 6, 0], "part": "right_leg", "part_pivot": [-1.9, 12, 0]},
+    "l_shin": {"pivot": [1.9, 6, 0], "part": "left_leg", "part_pivot": [1.9, 12, 0]},
+    "r_foot": {"pivot": [-1.9, 1, 0], "part": "right_leg", "part_pivot": [-1.9, 12, 0]},
+    "l_foot": {"pivot": [1.9, 1, 0], "part": "left_leg", "part_pivot": [1.9, 12, 0]}
+  }
+}

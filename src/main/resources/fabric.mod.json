@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "bs3d_gear",
+  "version": "${version}",
+  "name": "Kizuna BS3D Gear Addon",
+  "description": "Bong 穿搭资源与玩家骨骼刚性绑定",
+  "environment": "*",
+  "license": "MIT",
+  "entrypoints": {
+    "main": ["dev.kizuna.bs3dgear.server.GearServer"],
+    "client": ["dev.kizuna.bs3dgear.client.GearClient"]
+  },
+  "mixins": ["bs3d_gear.client.mixins.json"],
+  "custom": {"bs3d:item_registries": ["bs3d/gear/items.txtpb"]},
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "26.2",
+    "java": ">=25",
+    "fabric-api": ">=0.161.0+26.2",
+    "backpack_storage_3d": "0.1.0-SNAPSHOT"
+  },
+  "suggests": {"kizuna_players_animation": "0.1.0-SNAPSHOT"},
+  "breaks": {"kpa_bs3d_swing": "*"}
+}

@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bs3d_gear:item/shou_ya_xiang_lian",
+    "model": {
+      "type": "bs3d_gear:wearable"
+    }
+  }
+}

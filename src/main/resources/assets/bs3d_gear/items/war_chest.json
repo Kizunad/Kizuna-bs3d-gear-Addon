@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bs3d_gear:item/war_chest",
+    "model": {
+      "type": "bs3d_gear:wearable"
+    }
+  }
+}

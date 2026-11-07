@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+apply from: new File(rootDir.parentFile, 'Kizuna-Meridian-Mod-Framework/scripts/workspace.gradle')
+rootProject.name = 'kizuna-bs3d-gear-addon'
+kizunaWorkspace.includeSource('bs3d', [server: 'dev.kizuna.backpack3d:server', client: 'dev.kizuna.backpack3d:client'])
+kizunaWorkspace.includeSource('inventory-ui', ['': 'dev.kizuna.inventoryui:kizuna-inventory-ui-framework',
+                                             server: 'dev.kizuna.inventoryui:server'])
+kizunaWorkspace.includeSource('players-animation', ['': 'dev.kizuna:kizuna-players-animation'])
+kizunaWorkspace.includeSource('bs3d-weights', [server: 'dev.kizuna.bs3d.weights:server',
+                                           client: 'dev.kizuna.bs3d.weights:client'])
+kizunaWorkspace.includeSource('bs3d-vanilla', [server: 'dev.kizuna.bs3d.vanilla:server',
+                                           client: 'dev.kizuna.bs3d.vanilla:client'])
+kizunaWorkspace.includeSource('bs3d-pocket', [server: 'dev.kizuna.bs3d.pocket:server',
+                                          client: 'dev.kizuna.bs3d.pocket:client'])

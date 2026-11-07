@@ -1,0 +1,26 @@
+{
+  "gui_light": "front",
+  "display": {
+    "gui": {
+      "rotation": [
+        10,
+        35,
+        0
+      ]
+    },
+    "firstperson_righthand": {
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "thirdperson_righthand": {
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  }
+}

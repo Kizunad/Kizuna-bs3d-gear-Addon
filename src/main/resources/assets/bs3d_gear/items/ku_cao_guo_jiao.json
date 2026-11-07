@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bs3d_gear:item/ku_cao_guo_jiao",
+    "model": {
+      "type": "bs3d_gear:wearable"
+    }
+  }
+}
