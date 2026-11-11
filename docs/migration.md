@@ -1,6 +1,6 @@
 # PA-BS3D 附属合并边界
 
-旧仓 `Kizuna-Players-Animation-bs3d-Addon` 面向 Minecraft 1.20.1。26.2 的刚性挂接职责由本仓接管：在原 BS3D `WorldEquipmentRenderer` 调用挂点公式前，移除其已乘的原版 body 变换，追加同一渲染快照的 PA 腰/胸骨增量。挂点半径、缩放和朝向继续只由 BS3D 维护。
+旧仓 `Kizuna-Players-Animation-bs3d-Addon` 面向 Minecraft 1.20.1。26.2 的刚性挂接职责由本仓接管：在原 BS3D `WorldEquipmentRenderer` 调用挂点公式前，移除其已乘的原版 body 变换，追加同一渲染快照的 PA 骨盆/胸骨增量：腰挂和腰带贴在脚底上 12–14 像素，落在骨盆段（pelvis 12–16），跟 pelvis；胸挂、背负跟 chest。waist 骨枢轴在 16 像素，下蹲前倾时会把挂点甩到臀后，不能用。挂点半径、缩放和朝向继续只由 BS3D 维护。
 
 没有 PA 或该实体没有 `EntityFrame` 时，Mixin 保留 BS3D 原变换。实体变换、隐身/旁观过滤及权威外观身份校验继续由原入口处理。clientTest 调用实际经过 Mixin 的原渲染器，检查 PA 与无 PA 两条矩阵路径。
 

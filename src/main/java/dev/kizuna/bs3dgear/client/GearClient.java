@@ -18,6 +18,10 @@ import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 import org.joml.Matrix4f;
 
 public final class GearClient implements ClientModInitializer {
+    // 腰挂与腰带贴在脚底上 12–14 像素，属于 PA 骨盆段（12–16）；waist 骨枢轴在 16 像素，
+    // 前倾时会把枢轴下方的挂点甩到身后。胸挂、背负贴在上身，跟胸骨。
+    private static final String WAIST_MOUNT_BONE = "pelvis";
+    private static final String TORSO_MOUNT_BONE = "chest";
     private static RigidBindings bindings;
 
     @Override
@@ -47,10 +51,10 @@ public final class GearClient implements ClientModInitializer {
     }
 
     public static void bindContainer(PoseStack matrices, AvatarRenderState state, Mount mount) {
-        // BS3D 已应用原版 body；去掉它后接 PA 腰/胸增量，随后仍由原 BS3D 计算挂点与缩放。
-        String bone = "waist";
+        // BS3D 已应用原版 body；去掉它后接 PA 骨盆/胸增量，随后仍由原 BS3D 计算挂点与缩放。
+        String bone = WAIST_MOUNT_BONE;
         if (mount == Mount.TORSO_FRONT || mount == Mount.TORSO_BACK) {
-            bone = "chest";
+            bone = TORSO_MOUNT_BONE;
         }
         Matrix4f delta = bindings.boneDelta(state, bone);
         if (delta == null) {

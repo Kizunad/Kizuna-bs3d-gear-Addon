@@ -49,7 +49,7 @@ final class ContainerPreviewClientTest {
         float oldYaw = model.body.yRot;
         try {
             model.body.yRot = BODY_YAW_RADIANS;
-            verifyAttachment(waist, "waist", model);
+            verifyAttachment(waist, "pelvis", model);
             verifyAttachment(chest, "chest", model);
         } finally {
             model.body.yRot = oldYaw;
@@ -72,7 +72,7 @@ final class ContainerPreviewClientTest {
             PaClientProbe.attach(state, GearPreview.PoseMode.BENT);
             var delta = GearClient.bindings().boneDelta(state, bone);
             assertFalse(delta.equals(new Matrix4f(), EPSILON), bone + " 测试帧必须包含实际增量");
-            var other = GearClient.bindings().boneDelta(state, bone.equals("waist") ? "chest" : "waist");
+            var other = GearClient.bindings().boneDelta(state, bone.equals("pelvis") ? "chest" : "pelvis");
             assertFalse(delta.equals(other, EPSILON), "胸腰不能复用同一矩阵");
             expected = new Matrix4f(root.last().pose()).mul(delta)
                     .mul(new Matrix4f(body.last().pose()).invert()).mul(baseline);

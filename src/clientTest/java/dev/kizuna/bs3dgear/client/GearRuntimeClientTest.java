@@ -172,7 +172,7 @@ final class GearRuntimeClientTest {
             return baseline;
         }
         PaClientProbe.attach(state, GearPreview.PoseMode.BENT);
-        var delta = GearClient.bindings().boneDelta(state, "waist");
+        var delta = GearClient.bindings().boneDelta(state, "pelvis");
         return delta.mul(new Matrix4f(body.last().pose()).invert()).mul(baseline);
     }
 

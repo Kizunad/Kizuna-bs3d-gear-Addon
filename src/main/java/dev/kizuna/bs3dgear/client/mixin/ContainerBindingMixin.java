@@ -15,7 +15,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 abstract class ContainerBindingMixin {
     @Inject(method = "render", at = @At(value = "INVOKE",
             target = "Ldev/kizuna/backpack3d/client/WornModelTransform;apply("
-                    + "Lcom/mojang/blaze3d/vertex/PoseStack;Ldev/kizuna/backpack3d/client/ModelAsset;Z"
+                    + "Lcom/mojang/blaze3d/vertex/PoseStack;Ldev/kizuna/backpack3d/client/ModelAsset;"
+                    + "Ldev/kizuna/backpack3d/item/ContainerItems$Definition;"
                     + "Ldev/kizuna/backpack3d/protocol/pb/VolumeProtocol$Mount;F)V"))
     private void gear$bindContainer(CallbackInfo callback, @Local(argsOnly = true) AvatarRenderState state,
             @Local(ordinal = 1) PoseStack matrices, @Local WornModel worn) {

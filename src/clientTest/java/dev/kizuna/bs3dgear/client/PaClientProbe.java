@@ -32,6 +32,8 @@ final class PaClientProbe {
     private static final float ELBOW_DEGREES = -60;
     private static final float KNEE_DEGREES = 55;
     private static final float HEAD_DEGREES = 30;
+    // 骨盆前倾同下蹲：腰挂若错跟 waist 骨，枢轴下方的挂点会与骨盆分开。
+    private static final float PELVIS_DEGREES = 12;
     private static final float WAIST_DEGREES = 18;
     private static final float CHEST_DEGREES = -14;
     private static final float WAIST_SHIFT_PIXELS = 2;
@@ -52,6 +54,7 @@ final class PaClientProbe {
         }
         Pose[] pose = Rig.zeroPose();
         if (mode == GearPreview.PoseMode.BENT) {
+            pose[BoneId.PELVIS.ordinal()] = new Pose(Vec3.ZERO, new Vec3(PELVIS_DEGREES, 0, 0));
             pose[BoneId.WAIST.ordinal()] = new Pose(new Vec3(WAIST_SHIFT_PIXELS, 0, 0),
                     new Vec3(0, WAIST_DEGREES, 0));
             pose[BoneId.CHEST.ordinal()] = new Pose(new Vec3(0, 0, CHEST_SHIFT_PIXELS),
