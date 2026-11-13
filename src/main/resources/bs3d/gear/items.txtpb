@@ -2,6 +2,7 @@
 version: 1
 items {
   id: "bs3d_gear:can_bu_tou_jin"
+  description_translation_key: "item.bs3d_gear.can_bu_tou_jin.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "残布头巾"
@@ -13,6 +14,7 @@ items {
 }
 items {
   id: "bs3d_gear:cu_bu_bang_tui"
+  description_translation_key: "item.bs3d_gear.cu_bu_bang_tui.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "粗布绑腿"
@@ -25,6 +27,7 @@ items {
 }
 items {
   id: "bs3d_gear:cu_bu_mian_jin"
+  description_translation_key: "item.bs3d_gear.cu_bu_mian_jin.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "粗布面巾"
@@ -38,6 +41,7 @@ items {
 }
 items {
   id: "bs3d_gear:cu_ma_dou_peng"
+  description_translation_key: "item.bs3d_gear.cu_ma_dou_peng.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "粗麻斗篷"
@@ -58,6 +62,7 @@ items {
 }
 items {
   id: "bs3d_gear:gu_pian_jian_jia"
+  description_translation_key: "item.bs3d_gear.gu_pian_jian_jia.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "骨片肩甲"
@@ -78,6 +83,7 @@ items {
 }
 items {
   id: "bs3d_gear:ku_cao_guo_jiao"
+  description_translation_key: "item.bs3d_gear.ku_cao_guo_jiao.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "枯草裹脚"
@@ -90,6 +96,7 @@ items {
 }
 items {
   id: "bs3d_gear:pi_sheng_hu_wan"
+  description_translation_key: "item.bs3d_gear.pi_sheng_hu_wan.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "皮绳护腕"
@@ -102,6 +109,7 @@ items {
 }
 items {
   id: "bs3d_gear:shou_ya_xiang_lian"
+  description_translation_key: "item.bs3d_gear.shou_ya_xiang_lian.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "兽牙项链"
@@ -113,6 +121,7 @@ items {
 }
 items {
   id: "bs3d_gear:xiu_pian_hu_mu"
+  description_translation_key: "item.bs3d_gear.xiu_pian_hu_mu.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "锈片护目"
@@ -128,6 +137,7 @@ items {
 }
 items {
   id: "bs3d_gear:war_helm"
+  description_translation_key: "item.bs3d_gear.war_helm.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "战盔"
@@ -139,6 +149,7 @@ items {
 }
 items {
   id: "bs3d_gear:war_chest"
+  description_translation_key: "item.bs3d_gear.war_chest.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "战甲"
@@ -152,6 +163,7 @@ items {
 }
 items {
   id: "bs3d_gear:war_legs"
+  description_translation_key: "item.bs3d_gear.war_legs.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "战裙与战靴"
@@ -166,6 +178,7 @@ items {
 }
 items {
   id: "bs3d_gear:war_cloak"
+  description_translation_key: "item.bs3d_gear.war_cloak.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "战披风"
@@ -177,6 +190,7 @@ items {
 }
 items {
   id: "bs3d_gear:war_suit"
+  description_translation_key: "item.bs3d_gear.war_suit.description"
   creative_tab: "bs3d_gear:equipment"
   wearable {
     title: "战装套装"

@@ -32,6 +32,28 @@ SOURCE_BLOBS = {
 ENGLISH = ("Ragged Turban", "Linen Leg Wraps", "Linen Face Wrap", "Coarse Hemp Cloak",
            "Bone Plate Pauldron", "Dry Grass Foot Wraps", "Leather Cord Bracers", "Fang Necklace",
            "Rust Plate Goggles", "War Helm", "War Chest", "War Legs and Boots", "War Cloak", "War Suit")
+# 物品提示里的一句描述（中文、英文）：普通穿搭只是外观，战装按铁甲算防御、与原版同部位盔甲互斥。
+DESCRIPTIONS = {
+    "can_bu_tou_jin": ("戴在头上，只是外观", "Worn on the head; appearance only"),
+    "cu_bu_bang_tui": ("绑在两条小腿上，只是外观", "Wrapped around both shins; appearance only"),
+    "cu_bu_mian_jin": ("蒙在脸上，只是外观", "Worn over the face; appearance only"),
+    "cu_ma_dou_peng": ("披在背后，只是外观", "Worn on the back; appearance only"),
+    "gu_pian_jian_jia": ("戴在左肩，只是外观", "Worn on the left shoulder; appearance only"),
+    "ku_cao_guo_jiao": ("裹在两只脚上，只是外观", "Wrapped around both feet; appearance only"),
+    "pi_sheng_hu_wan": ("系在两只手腕上，只是外观", "Tied around both wrists; appearance only"),
+    "shou_ya_xiang_lian": ("挂在脖子上，只是外观", "Worn around the neck; appearance only"),
+    "xiu_pian_hu_mu": ("戴在眼前，只是外观", "Worn over the eyes; appearance only"),
+    "war_helm": ("按铁头盔算防御；不能和原版头盔同穿",
+                 "Defends like an iron helmet; cannot be worn with a vanilla helmet"),
+    "war_chest": ("按铁胸甲算防御；不能和原版胸甲同穿",
+                  "Defends like an iron chestplate; cannot be worn with a vanilla chestplate"),
+    "war_legs": ("按铁护腿加铁靴子算防御；不能和原版护腿、靴子同穿",
+                 "Defends like iron leggings and boots; cannot be worn with vanilla leggings or boots"),
+    "war_cloak": ("披在背后，只是外观", "Worn on the back; appearance only"),
+    "war_suit": ("一件占满头、身、腿、脚和披风，按整套铁甲算防御；不能和原版盔甲同穿",
+                 "One piece fills head, body, legs, feet and cloak; defends like a full iron set; "
+                 "cannot be worn with vanilla armor"),
+}
 WAR_BINDINGS = {
     "armorHead": ("armor_head", "head"), "armorBody": ("armor_body", "chest"),
     "armorLeftArm": ("armor_body", "l_upper_arm"), "armorRightArm": ("armor_body", "r_upper_arm"),
@@ -172,7 +194,9 @@ def build_outputs(bong):
         model, bindings = adapt(read_source(bong, path, blob), item_id)
         previews.append((item_id, model, bindings))
         outputs[RESOURCE / f"bs3d/gear/models/{name}.bbmodel"] = json_text(model)
+        description_key = f"item.bs3d_gear.{item_id}.description"
         catalog.extend(["items {", f'  id: "bs3d_gear:{item_id}"',
+                        f'  description_translation_key: "{description_key}"',
                         '  creative_tab: "bs3d_gear:equipment"', "  wearable {",
                         f'    title: "{title}"', f'    model: "bs3d_gear:{item_id}"'])
         for b in bindings:
@@ -188,6 +212,7 @@ def build_outputs(bong):
             "thirdperson_righthand": {"scale": [0.5, 0.5, 0.5]}}})
         languages["zh_cn"][f"item.bs3d_gear.{item_id}"] = title
         languages["en_us"][f"item.bs3d_gear.{item_id}"] = english
+        languages["zh_cn"][description_key], languages["en_us"][description_key] = DESCRIPTIONS[item_id]
         sources.append({"id": item_id, "path": path, "blob_sha1": blob, "mirror_x": not item_id.startswith("war_"),
                         "cubes": len(model["elements"]), "bindings": bindings})
     outputs[RESOURCE / "bs3d/gear/items.txtpb"] = "\n".join(catalog) + "\n"
