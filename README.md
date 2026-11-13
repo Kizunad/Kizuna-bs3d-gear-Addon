@@ -10,7 +10,7 @@ Minecraft 26.2 / Fabric / Java 25 的穿搭附属。物品、穿脱、层冲突�
 - 客户端还需 BS3D client、Inventory UI client/server、owo 及各自依赖；专用服务端需 BS3D server 和 Inventory UI server。Fabric API 两端必需。
 - Players Animation 可选。安装时按当前实体 `EntityFrame` 跟随骨骼；物理缺包或该实体没有帧时使用原版 `ModelPart`。生产 JAR 不内嵌 PA。
 - 不与旧 `kpa_bs3d_swing` 同装，清单明确拒绝重复挂接。合并边界见 [迁移说明](docs/migration.md)。
-- 在独立的 **Gear 装备** 创造栏取得 14 件正式装备。将手中或容器内装备拖到 BS3D 人物模型即可穿戴；右键模型打开“脱掉 XXX”列表，选择后取回合法原版主背包槽位。独立背包页、工作台和安装新版 Vanilla Addon 后的原版菜单共用交互，满背包等拒绝保留原物品。
+- 生存里在工作台用原版材料合成 14 件正式装备，背包里第一次进了主材料时配方书解锁，见下文「合成配方」；也可在独立的 **Gear 装备** 创造栏取得。将手中或容器内装备拖到 BS3D 人物模型即可穿戴；右键模型打开“脱掉 XXX”列表，选择后取回合法原版主背包槽位。独立背包页、工作台和安装新版 Vanilla Addon 后的原版菜单共用交互，满背包等拒绝保留原物品。
 
 | 物品 ID（`bs3d_gear:`） | 外观 / 层 |
 |---|---|
@@ -30,6 +30,29 @@ Minecraft 26.2 / Fabric / Java 25 的穿搭附属。物品、穿脱、层冲突�
 | `war_suit` | 战装组合模型 / 四个甲层 + cape，原子占用 |
 
 普通外观实际为 9 件。原挑选文档的“gear 11 件”包含已移交 BS3D 的枯藤腰带和未选骨灯挂杆；加 War 五个选定源模型后，本仓共 14 件。WarChest 属于 War 套；WarSuit 保留所选组合模型，与其单件因相同占层互斥。
+
+## 合成配方
+
+配方在 `src/main/resources/data/bs3d_gear/recipe/`，解锁照原版 `recipes/` 进度，在 `advancement/recipes/combat/`：背包里进了解锁材料，或已经有这份配方，就发进配方书。布料件用羊毛和线，骨件用骨头；有铁甲防御的三件比同部位的原版铁甲多一块皮革内衬，战裙与战靴同时给护腿和靴子的防御，用 13 铁（四块铁锭加一块铁块）；战装套装由四件无序合成。配方与材料是占位，可直接改 JSON。
+
+| 名称 | 物品 ID | 配方（每行一排，`·` 为空格） | 解锁材料 |
+|---|---|---|---|
+| 残布头巾 | `bs3d_gear:can_bu_tou_jin` | `WWW` / `W·W`；W 任意羊毛 | 任意羊毛 |
+| 粗布绑腿 | `bs3d_gear:cu_bu_bang_tui` | `WSW` / `W·W` / `W·W`；W 任意羊毛，S 线 | 任意羊毛 |
+| 粗布面巾 | `bs3d_gear:cu_bu_mian_jin` | `SWS` / `WWW`；S 线，W 任意羊毛 | 任意羊毛 |
+| 粗麻斗篷 | `bs3d_gear:cu_ma_dou_peng` | `S·S` / `WWW` / `WWW`；S 线，W 任意羊毛 | 任意羊毛 |
+| 骨片肩甲 | `bs3d_gear:gu_pian_jian_jia` | `BBB` / `SLS`；B 骨头，S 线，L 皮革 | 骨头 |
+| 枯草裹脚 | `bs3d_gear:ku_cao_guo_jiao` | `S·S` / `W·W` / `W·W`；S 线，W 小麦 | 小麦 |
+| 皮绳护腕 | `bs3d_gear:pi_sheng_hu_wan` | `L·L` / `S·S`；L 皮革，S 线 | 皮革 |
+| 兽牙项链 | `bs3d_gear:shou_ya_xiang_lian` | `SSS` / `B·B` / `·B·`；S 线，B 骨头 | 骨头 |
+| 锈片护目 | `bs3d_gear:xiu_pian_hu_mu` | `SSS` / `N·N`；S 线，N 铁粒 | 铁粒 |
+| 战盔 | `bs3d_gear:war_helm` | `III` / `ILI`；I 铁锭，L 皮革 | 铁锭 |
+| 战甲 | `bs3d_gear:war_chest` | `ILI` / `III` / `III`；I 铁锭，L 皮革 | 铁锭 |
+| 战裙与战靴 | `bs3d_gear:war_legs` | `IBI` / `I·I` / `L·L`；I 铁锭，B 铁块，L 皮革 | 铁锭 |
+| 战披风 | `bs3d_gear:war_cloak` | `N·N` / `WWW` / `WWW`；N 铁粒，W 任意羊毛 | 任意羊毛 |
+| 战装套装 | `bs3d_gear:war_suit` | 无序：战盔 + 战甲 + 战裙与战靴 + 战披风 | 战甲 |
+
+`GearRecipeGameTest` 在真服务器加载数据包后逐件检查：同名配方存在；用配方每格的第一种材料摆满工作台，原版选中的就是这份配方并产出本物品；解锁进度存在、发这份配方；新玩家背包里进了进度写的主材料后配方书里出现它。随本仓 `runGametest` 一起跑。
 
 ## 资产和坐标
 

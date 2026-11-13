@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "N": "minecraft:iron_nugget",
+    "W": "#minecraft:wool"
+  },
+  "pattern": [
+    "N N",
+    "WWW",
+    "WWW"
+  ],
+  "result": {
+    "id": "bs3d_gear:war_cloak"
+  }
+}

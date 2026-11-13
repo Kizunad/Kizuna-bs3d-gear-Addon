@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": "minecraft:string",
+    "N": "minecraft:iron_nugget"
+  },
+  "pattern": [
+    "SSS",
+    "N N"
+  ],
+  "result": {
+    "id": "bs3d_gear:xiu_pian_hu_mu"
+  }
+}

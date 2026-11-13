@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": "minecraft:string",
+    "B": "minecraft:bone"
+  },
+  "pattern": [
+    "SSS",
+    "B B",
+    " B "
+  ],
+  "result": {
+    "id": "bs3d_gear:shou_ya_xiang_lian"
+  }
+}

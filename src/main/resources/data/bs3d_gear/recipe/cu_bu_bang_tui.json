@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "W": "#minecraft:wool",
+    "S": "minecraft:string"
+  },
+  "pattern": [
+    "WSW",
+    "W W",
+    "W W"
+  ],
+  "result": {
+    "id": "bs3d_gear:cu_bu_bang_tui"
+  }
+}

@@ -5,6 +5,7 @@
   "environment": "*",
   "entrypoints": {
     "fabric-gametest": ["dev.kizuna.bs3dgear.GearRegistrationGameTest", "dev.kizuna.bs3dgear.GearArmorGameTest",
-      "dev.kizuna.bs3dgear.GearWeightGameTest", "dev.kizuna.bs3dgear.GearEquipmentGameTest"]
+      "dev.kizuna.bs3dgear.GearWeightGameTest", "dev.kizuna.bs3dgear.GearEquipmentGameTest",
+      "dev.kizuna.bs3dgear.GearRecipeGameTest"]
   }
 }

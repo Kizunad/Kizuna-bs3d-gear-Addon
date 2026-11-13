@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:bone",
+    "S": "minecraft:string",
+    "L": "minecraft:leather"
+  },
+  "pattern": [
+    "BBB",
+    "SLS"
+  ],
+  "result": {
+    "id": "bs3d_gear:gu_pian_jian_jia"
+  }
+}

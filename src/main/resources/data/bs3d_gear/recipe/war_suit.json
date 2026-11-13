@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "bs3d_gear:war_helm",
+    "bs3d_gear:war_chest",
+    "bs3d_gear:war_legs",
+    "bs3d_gear:war_cloak"
+  ],
+  "result": {
+    "id": "bs3d_gear:war_suit"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "B": "minecraft:iron_block",
+    "L": "minecraft:leather"
+  },
+  "pattern": [
+    "IBI",
+    "I I",
+    "L L"
+  ],
+  "result": {
+    "id": "bs3d_gear:war_legs"
+  }
+}

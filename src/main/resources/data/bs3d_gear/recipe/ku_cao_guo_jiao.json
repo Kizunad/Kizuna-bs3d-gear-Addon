@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": "minecraft:string",
+    "W": "minecraft:wheat"
+  },
+  "pattern": [
+    "S S",
+    "W W",
+    "W W"
+  ],
+  "result": {
+    "id": "bs3d_gear:ku_cao_guo_jiao"
+  }
+}
